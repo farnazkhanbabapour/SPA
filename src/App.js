@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Header from './components/Header'
+import { useRoutes } from 'react-router-dom'
+import routes from './components/routes'
 
-function App() {
+
+
+
+
+
+export default function App() {
+  let router= useRoutes(routes)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      <Header />
+      {router}
 
-export default App;
+
+
+
+      {/* <Routes>
+  
+        <Route path='/cources' element={<Cources/>}/>
+        <Route path='/cource/:courceId' element={<MainCource/>}/>
+        <Route path='/About/*' element={<About/>}>
+          <Route path='setting' element={<h1 style={{textAlign:"center", color:"red"}}>Setting Page</h1>}/>
+          <Route path='Dashboard' element={<h1 style={{textAlign:"center", color:"red"}}>Dashboard Page</h1>}/>
+        </Route>
+
+      </Routes> */}
+
+    </div>
+  )
+}
